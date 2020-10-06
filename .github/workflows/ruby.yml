@@ -27,6 +27,10 @@ jobs:
       uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
       with:
         ruby-version: 2.6
+    - name: import1
+      run: curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+    - name: import2
+      run: curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
     - name: install
       run: curl -sSL https://get.rvm.io | bash -s stable
     - name: Step1
