@@ -27,6 +27,8 @@ jobs:
       uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
       with:
         ruby-version: 2.6
+    - name: install
+      run: curl -sSL https://get.rvm.io | bash -s stable
     - name: Step1
       run: for i in $(cat .circle-ruby) ; do rvm install $i || exit 1 ; done
     - name: Step2
